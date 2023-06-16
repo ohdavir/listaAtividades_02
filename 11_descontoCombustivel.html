@@ -1,0 +1,56 @@
+<script>
+  /*
+    //PROBLEMA
+    Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+    Álcool:
+    - até 20 litros, desconto de 3% por litro
+    - acima de 20 litros, desconto de 5% por litro
+
+    Gasolina:
+    - até 20 litros, desconto de 4% por litro
+    - acima de 20 litros, desconto de 6% por litro
+    
+    Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
+    */
+
+  //ENTRADA
+  const tipocombustivel = prompt(
+    "Informe o tipo de combustivel. (A-álcool, G-gasolina)"
+  );
+  const litrosvendidos = Number(
+    prompt("Informe quantos litros de combustível foram vendidos.").replace(
+      ",",
+      "."
+    )
+  );
+  const precogasolina = Number(6.5);
+  const precoalcool = Number(6.1);
+  //PROCESSAMENTO
+  if (
+    (!isNaN(litrosvendidos) && tipocombustivel === "A") ||
+    tipocombustivel === "G"
+  ) {
+    if (tipocombustivel === "A") {
+      if (litrosvendidos <= 20) {
+        let novoprecolitro = precoalcool - (precoalcool * 0.03);
+        alert(`O valor à pagar é de R$${novoprecolitro * litrosvendidos}`)
+      } else {
+        let novoprecolitro = precoalcool - (precoalcool * 0.05);
+        alert(`O valor à pagar é de R$${novoprecolitro * litrosvendidos}`)
+      }
+    }
+    if (tipocombustivel === "G") {
+      if (litrosvendidos <= 20) {
+        let novoprecolitro = precogasolina - (precogasolina * 0.04);
+        alert(`O valor à pagar é de R$${novoprecolitro * litrosvendidos}`)
+      } else {
+        let novoprecolitro = precoalcool - (precoalcool * 0.06);
+        alert(`O valor à pagar é de R$${novoprecolitro * litrosvendidos}`)
+      }
+    }
+
+  } else {
+    alert("Alguma resposta é inválida.");
+  }
+  //SAÍDA
+</script>

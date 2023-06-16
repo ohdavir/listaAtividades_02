@@ -1,0 +1,57 @@
+<meta charset="UTF-8" />
+<script>
+  let saque = Number(prompt(`Qual a quantia que deseja sacar?`));
+
+  let mensagemFinal = `Para sacar a quantia de R$ ${saque.toFixed(
+    2
+  )}, o script fornece `;
+
+  if (!isNaN(saque)) {
+    const notasCem = Math.floor(saque / 100);
+    saque = saque % 100;
+    const notasCinquenta = Math.floor(saque / 50);
+    saque = saque % 50;
+    const notasDez = Math.floor(saque / 10);
+    saque = saque % 10;
+    const notasCinco = Math.floor(saque / 5);
+    saque = saque % 5;
+    const notasUm = saque;
+
+    if (notasCem > 0) {
+      mensagemFinal = mensagemFinal + `${notasCem} notas de Cem`;
+    }
+    if (notasCinquenta > 0 || notasDez > 0 || notasCinco > 0 || notasUm > 0) {
+      if (notasCinquenta > 0) {
+        if (notasDez > 0 || notasCinco > 0 || notasUm > 0) {
+          mensagemFinal = mensagemFinal + `, `;
+        } else {
+          mensagemFinal = mensagemFinal + ` e `;
+        }
+        mensagemFinal = mensagemFinal + `${notasCinquenta} nota de Cinquenta`;
+      }
+      if (notasDez > 0) {
+        if (notasCinco > 0 || notasUm > 0) {
+          mensagemFinal = mensagemFinal + `, `;
+        } else {
+          mensagemFinal = mensagemFinal + ` e `;
+        }
+        mensagemFinal = mensagemFinal + `${notasDez} notas de Dez`;
+      }
+      if (notasCinco > 0) {
+        if (notasUm > 0) {
+          mensagemFinal = mensagemFinal + `, `;
+        } else {
+          mensagemFinal = mensagemFinal + ` e `;
+        }
+        mensagemFinal = mensagemFinal + `${notasCinco} notas de Cinco`;
+      }
+      if (notasUm > 0) {
+        mensagemFinal = mensagemFinal + ` e ${notasUm} notas de Um`;
+      }
+    }
+
+    document.write(mensagemFinal);
+  } else {
+    alert(`Informe um número.`);
+  }
+</script>

@@ -1,0 +1,27 @@
+<script>
+  /*
+      //PROBLEMA
+      Faça um script que pede dois inteiros e armazene eles em duas variáveis.
+      Em seguida, troque o valor das variáveis, invertendo e exibindo o antes e o depois em uma janela de alert.
+      */
+
+  //ENTRADA
+  let num1 = Number(prompt("Informe um número.").trim());
+  let num2 = Number(prompt("Informe um número.").trim());
+  const nume1 = num1;
+  //PROCESSAMENTO
+  if (!isNaN(num1) && !isNaN(num2)) {
+    if (num1 == num2) {
+      alert(`Você usou números iguais.`);
+    } else {
+      num1 = num2;
+      num2 = nume1;
+      alert(
+        `O primeiro número era ${num2}, agora é ${num1}. O segundo número era ${num1}, agora é ${num2}.`
+      );
+    }
+  } else {
+    alert(`Informe apenas números.`);
+  }
+  //SAÍDA
+</script>

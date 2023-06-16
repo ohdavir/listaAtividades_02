@@ -1,0 +1,33 @@
+<script>
+    /*
+    //PROBLEMA
+    Faça um script que leia três números e mostre-os em ordem decrescente.
+    */
+  
+    //ENTRADA
+    const num1 = Number(prompt("Informe um número.").trim());
+    const num2 = Number(prompt("Informe um número.").trim());
+    const num3 = Number(prompt("Informe um número.").trim());
+    //PROCESSAMENTO
+    if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+      if (num1 == num2 || num2 == num3 || num1 == num3 || num3 == num2) {
+        alert("Existem números que são iguais.");
+      } else {
+        if (num1 > num2 && num2 > num3) {
+          alert(`Números em ordem decrescente: ${num1};${num2};${num3}.`);
+        } else if (num2 > num1 && num1 > num3) {
+          alert(`Números em ordem decrescente: ${num2};${num1};${num3}.`);
+        } else if (num3 > num1 && num1 > num2) {
+          alert(`Números em ordem decrescente: ${num3};${num1};${num2}.`);
+        } else if (num1 > num3 && num3 > num2){
+          alert(`Números em ordem decrescente: ${num1};${num3};${num2}.`)
+        } else if (num3 > num2 && num2 > num1){
+          alert(`Números em ordem decrescente: ${num3};${num2};${num1}.`)
+        }
+      }
+    } else {
+      alert(`Informe apenas números.`);
+    }
+    //SAÍDA
+  </script>
+  

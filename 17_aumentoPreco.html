@@ -1,0 +1,33 @@
+<meta charset="UTF-8" />
+<script>
+    // Recebe o preço do produto e calcula o aumento do preço, baseado no seguinte critério:
+        //- até 280(inclusive): aumento de 20 %
+        //- até 700(inclusive): aumento de 15 %
+        //- até 1500(inclusive): aumento de 10 %
+        //- acima de 1500: aumento de 5 %
+    
+    // Entrada
+    const preco = Number(prompt("Informe o preço do produto.").replace(",","."))
+    
+    // Processamento
+    if (!isNaN(preco)){
+        if (preco < 0 && preco >= 280){
+             let aumento = preco * 0.2
+             alert(`O novo valor do produto é de R$${preco + aumento}, com aumento de R$${aumento}.`)
+        } else if (preco < 280 && preco >= 700){
+             let aumento = preco * 0.15
+             alert(`O novo valor do produto é de R$${preco + aumento}, com aumento de R$${aumento}.`)
+        } else if (preco < 700 && preco >= 1500){
+             let aumento = preco * 0.1
+             alert(`O novo valor do produto é de R$${preco + aumento}, com aumento de R$${aumento}.`)
+        } else {
+            let aumento = preco * 0.05
+             alert(`O novo valor do produto é de R$${preco + aumento}, com aumento de R$${aumento}.`)
+        }
+    } else {
+        alert("Valor inválido.")
+    }
+    
+    // Saída
+
+</script>

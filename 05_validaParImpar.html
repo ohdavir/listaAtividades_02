@@ -1,0 +1,28 @@
+<meta charset="UTF-8" />
+<script>
+  /*
+    //PROBLEMA
+    Faça um script que peça um número inteiro e determine se ele é par ou ímpar.
+    */
+
+  //ENTRADA
+  const num = Number(prompt("Informe um número inteiro."));
+
+  //PROCESSAMENTO
+
+  if (num.isIntege) {
+    if (!isNaN(num)) {
+      if (num % 2 > 0) {
+        alert(`O número é ímpar.`);
+      } else {
+        alert(`O número é par.`);
+      }
+    } else {
+      alert(`Informe apenas números.`);
+    }
+  } else {
+    alert(`Informe apenas números inteiros.`);
+  }
+
+  //SAÍDA
+</script>

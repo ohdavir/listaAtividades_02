@@ -1,0 +1,35 @@
+<script>
+    /*
+    //PROBLEMA
+    Faça um script que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
+    Observando os termos no plural a colocação do "e", da vírgula entre outros.
+    
+    Exemplo:
+    326 = 3 centenas, 2 dezenas e 6 unidades
+    12 = 1 dezena e 2 unidades
+    Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
+    */
+
+    //ENTRADA
+    let num = Number(prompt("Informe um número menor que mil(1000)."))
+
+    //PROCESSAMENTO
+    if(!isNaN(num) && num < 1000) {
+    
+    const centenas = Math.floor(num / 1000)
+    num0 = (num % 1000).toString();
+    const dezenas = Math.floor(num / 100)
+    num1 = (num % 100).toString();
+    const unidades = Math.floor(num / 10)
+    num2 = (num % 10).toString();
+
+        alert(`O número tem ${num0.charAt(0)} centenas, ${num1.charAt(0)} dezenas e ${num2} unidades.`)
+    } else if (num === 1000){
+        alert(`Você informe uma unidade de milhar.`)
+    } else {
+        alert(`Informe apenas um número, que seja menor que mil(1000).`)
+    }
+    //SAÍDA
+
+
+</script>

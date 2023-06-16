@@ -1,0 +1,66 @@
+<script>
+    /*
+    //PROBLEMA
+    Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+    - par ou ímpar;
+    - positivo ou negativo;
+    - inteiro ou decimal.
+    */
+
+    //ENTRADA
+    const num = Number(prompt("Informe um número."))
+    const num2 = Number(prompt("Informe um número."))
+    const operacao = prompt("Informe a operação que deseja fazer. (+, -, *, /)")
+    let parOUimpar = ""
+    let positivoOUnegativo = ""
+    let inteiroOUdecimal = ""
+    let resultado = ""
+    
+    let mensagemFinal = "Os números "+num+" e "+num2+" feitos na operação "+operacao+" resultam em "
+    //PROCESSAMENTO
+    if (!isNaN(num) && operacao == "+" || operacao == "-" || operacao == "*" || operacao == "/"){
+        if (operacao == "+"){
+           resultado = num + num2
+           mensagemFinal = mensagemFinal + ""+resultado+" que é "
+        } 
+        if (operacao == "-"){
+           resultado = num - num2
+           mensagemFinal = mensagemFinal + ""+resultado+" que é "
+        } 
+        if (operacao == "*"){
+           resultado = num * num2
+           mensagemFinal = mensagemFinal + ""+resultado+" que é "
+        } 
+        if (operacao == "/"){
+           const resultado = num / num2
+           mensagemFinal = mensagemFinal + ""+resultado+" que é "
+        }
+        if (resultado % 2 === 0){
+            parOUimpar = "par"
+            mensagemFinal = mensagemFinal + "par, "
+        } else {
+            parOUimpar = "impar"
+            mensagemFinal = mensagemFinal + "impar, "
+        }
+        if (resultado > 0){
+            positivoOUnegativo = "positivo"
+            mensagemFinal = mensagemFinal + "positivo e "
+        } else {
+            positivoOUnegativo = "negativo"
+            mensagemFinal = mensagemFinal + "negativo e "
+        }
+        if (Math.floor(resultado) == resultado) {
+            positivoOUnegativo = "inteiro"
+            mensagemFinal = mensagemFinal + "inteiro."
+        } else {
+            positivoOUnegativo = "decimal"
+            mensagemFinal = mensagemFinal + "decimal."
+        }
+    } else {
+        alert("Algum valor é invalido.")
+    }
+    
+    //SAÍDA
+    alert(""+mensagemFinal+"")
+
+</script>
